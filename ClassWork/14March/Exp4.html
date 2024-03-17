@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="mydiv"></div>
+    <script>
+        let inp = document.createElement('input');
+        inp.type = 'text';
+        inp.placeholder = 'enter your name';
+        inp.name = 'name';
+        inp.id = 'nameid';
+
+        let div = document.getElementById('mydiv');
+        div.appendChild(inp);
+
+        let btn = document.createElement('button');
+        btn.innerText = 'click';
+
+        let ul = document.createElement('ul');
+
+        div.appendChild(btn);
+        div.appendChild(ul);
+
+        btn.addEventListener('click', function () {
+            let value = inp.value;
+
+            let li = document.createElement('li');
+            li.innerText = value;
+            ul.appendChild(li);
+
+            inp.value = ''
+        })
+    </script>
+
+</body>
+
+</html>

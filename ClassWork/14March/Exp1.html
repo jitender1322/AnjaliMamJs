@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .ans {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="subContainer">
+        <div class="que">
+            <h1>what is html</h1>
+        </div>
+        <div class="ans">
+            <h1>hyper text markup language</h1>
+        </div>
+    </div>
+    <div class="subContainer">
+        <div class="que">
+            <h1>what is css</h1>
+        </div>
+        <div class="ans">
+            <h1>cascading style sheet</h1>
+        </div>
+    </div>
+
+    <script>
+        let queAll = document.querySelectorAll('.que');
+        // console.log(queAll);
+
+        queAll.forEach(function (que) {
+            que.addEventListener('click', function () {
+                let ans = this.nextElementSibling;
+                if (ans.style.display == 'none') {
+                    ans.style.display = 'block'
+                }
+                else {
+                    ans.style.display = 'none'
+                }
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>

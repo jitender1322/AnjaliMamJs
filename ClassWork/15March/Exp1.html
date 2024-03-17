@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        tr,
+        th,
+        td {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="uname">
+    <input type="text" id="sub">
+    <button onclick="add()">Add</button>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Subject</th>
+        </tr>
+        <tbody id="tbody"></tbody>
+    </table>
+    <script>
+        function add() {
+            let name = document.getElementById('uname');
+            let sub = document.getElementById('sub');
+            if (name.value == '' || sub.value == '') {
+                alert('Fill The Input')
+                return;
+            }
+
+            let tbody = document.getElementById('tbody');
+
+            let newRow = document.createElement('tr');
+            let newTd = document.createElement('td');
+            let newTd2 = document.createElement('td');
+
+            newTd.innerText = name.value;
+            newTd2.innerText = sub.value;
+
+            newRow.appendChild(newTd)
+            newRow.appendChild(newTd2)
+
+            tbody.appendChild(newRow);
+
+            name.value = ''
+            sub.value = ''
+        }
+    </script>
+</body>
+
+</html>

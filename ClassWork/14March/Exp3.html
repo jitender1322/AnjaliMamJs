@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let div = document.createElement('div');
+        let heading = document.createElement('h1');
+        heading.innerText = 'hi i am in the div';
+        let button = document.createElement('button');
+        button.innerText = 'click here';
+        button.id = 'btn';
+
+        div.appendChild(heading);
+        div.appendChild(button);
+        document.body.appendChild(div);
+
+        button.addEventListener('click', function () {
+            heading.style.color = 'red';
+            heading.style.backgroundColor = 'aliceblue';
+        })
+    </script>
+</body>
+
+</html>

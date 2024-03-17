@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="text" id="text">
+    <input type="text" name="link" id="link">
+    <button onclick="create()">Create</button>
+    <ul id="list"></ul>
+    <script>
+        function create() {
+            let text = document.getElementById('text');
+            let link = document.getElementById('link');
+
+            let a = document.createElement('a');
+            a.innerText = text.value;
+            a.setAttribute('href', link.value);
+
+            let li = document.createElement('li');
+            li.appendChild(a);
+
+            document.getElementById('list').appendChild(li);
+        }
+    </script>
+</body>
+
+</html>
