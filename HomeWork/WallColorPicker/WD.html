@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wall Color Picker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(246, 220, 220);
+        }
+
+        #container {
+            display: flex;
+
+        }
+
+        .col-1 {
+            margin: 20px auto;
+        }
+
+        #col {
+            position: relative;
+            width: 60%;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 10px;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+
+        #col img {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .c-box {
+            width: 150px;
+            height: 150px;
+            margin: 20px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="col-1">
+            <div class="c-box" id="one"></div>
+            <div class="c-box" id="two"></div>
+            <div class="c-box" id="three"></div>
+        </div>
+        <div id="col">
+            <img src="./img/bg.png" alt="" />
+        </div>
+        <div class="col-1">
+            <div class="c-box" id="four"></div>
+            <div class="c-box" id="five"></div>
+            <div class="c-box" id="six"></div>
+        </div>
+    </div>
+
+    <script>
+        let boxes = document.querySelectorAll(".c-box");
+        let arr = [
+            "url(./img/w-1.jpg)",
+            "url(./img/w-2.jpg)",
+            "url(./img/w-3.jpg)",
+            "url(./img/w-4.jpg)",
+            "url(./img/w-5.jpg)",
+            "url(./img/w-6.jpg)",
+        ];
+        for (let i = 0; i <= 5; i++) {
+            boxes[i].style.background = arr[i];
+        }
+        boxes.forEach(function (box) {
+            box.addEventListener("click", function () {
+                let bg = this.style.backgroundImage;
+                document.getElementById('col').style.background = bg;
+            });
+        });
+    </script>
+</body>
+
+</html>
