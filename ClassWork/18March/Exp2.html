@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="nameid">
+    <button id="btnadd" onclick="addData()">add</button>
+    <ul id="myul"></ul>
+    <script>
+        let myarr = [];
+        function addData() {
+            let value = document.querySelector('#nameid').value;
+            myarr.push(value);
+            renderdata()
+            document.querySelector('#nameid').value = ''
+        }
+        function renderdata() {
+            let ul = document.querySelector('#myul');
+            ul.innerHTML = '';
+            myarr.forEach(function (e, i) {
+                let li = document.createElement('li');
+                li.textContent = e;
+                ul.append(li);
+            })
+        }
+    </script>
+</body>
+
+</html>
