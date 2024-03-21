@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStoragePractice</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" placeholder="Enter your name" id="name">
+        <input type="text" placeholder="Enter your Subject" id="sub">
+        <input type="text" placeholder="Enter your city" id="city">
+        <input type="submit" id="sub_btn">
+    </form>
+
+    <script>
+        let form = document.querySelector('form');
+
+        form.addEventListener('submit', function () {
+            let name = document.getElementById('name');
+            let sub = document.getElementById('sub');
+            let city = document.getElementById('city');
+            localStorage.clear();
+            localStorage.setItem('name :', name.value)
+            localStorage.setItem('subject :', sub.value)
+            localStorage.setItem('city :', city.value)
+        })
+    </script>
+</body>
+
+</html>

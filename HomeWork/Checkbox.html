@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" id="all">selectAll
+    <input type="checkbox" class="sub">HTMl
+    <input type="checkbox" class="sub">CSS
+    <input type="checkbox" class="sub">JS
+    <input type="checkbox" class="sub">React
+
+    <script>
+        let all = document.getElementById('all');
+        let subjects = document.querySelectorAll('.sub');
+
+        all.addEventListener('change', function () {
+            if (all.checked) {
+                subjects.forEach(Element => {
+                    Element.checked = true;
+                })
+            }
+            else {
+                subjects.forEach(Element => {
+                    Element.checked = false;
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>
