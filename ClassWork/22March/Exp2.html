@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="name" id="name">
+    <input type="text" name="name" id="subject">
+    <input type="submit" name="name" id="submit">
+
+    <ul id="myUl"></ul>
+    <script>
+        let obj = {};
+        let btn = document.getElementById('submit');
+        btn.addEventListener('click', function () {
+            let name = document.getElementById('name');
+            let sub = document.getElementById('subject');
+
+            obj['name'] = name.value;
+            obj['subject'] = sub.value;
+            getData()
+        })
+
+        let ul = document.getElementById('myUl');
+
+        function getData() {
+            console.log(obj);
+            for (let key in obj) {
+                let li = document.createElement('li');
+                li.textContent = key + " " + obj[key];
+                ul.append(li)
+            }
+        }
+    </script>
+</body>
+
+</html>
