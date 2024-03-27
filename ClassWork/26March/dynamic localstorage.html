@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic localstorage</title>
+    <style>
+        table
+        {
+            border-collapse:collapse;
+            width: 500px;
+        }
+        tr,th,td
+        {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <form action="" onsubmit="addData(event)">
+        <input type="text" placeholder="Enter Name" id="nameid">
+        <input type="text" placeholder="Enter Subject" id="subjectid">
+        <input type="text" placeholder="Enter city" id="cityid">
+        <input type="submit" value="submit">
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>City</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+
+    <script>
+        function addData(e)
+         {
+            e.preventDefault();
+            let nameid=document.getElementById('nameid');    
+            let subjectid=document.getElementById('subjectid');    
+            let cityid=document.getElementById('cityid');    
+
+            let existingdata=JSON.parse( localStorage.getItem("Student"))||[];
+            let id=existingdata.length+1;
+            console.log(id);
+
+            let object={ id:id,
+                name:nameid.value,
+                subjectid:subjectid.value,cityid:cityid.value}
+            // console.log(object);
+
+            // console.log(existingdata);
+            existingdata.push(object);
+            // console.log(existingdata);
+
+            localStorage.setItem('student',JSON.stringify(existingdata));
+        }
+
+        function datafromlocal()
+         {
+            let tbody=document.getElementById('tbody');
+            let alldata=JSON.parse(localStorage.getItem('student'))||[];
+
+            for (let i = 0; i < alldata.length; i++)
+             {
+                console.log(alldata[i]);    
+            }
+        }
+        datafromlocal()
+
+    </script>
+</body>
+</html>

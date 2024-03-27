@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json and object</title>
+</head>
+
+<body>
+    <script>
+        //convert from json to object and object to json.
+
+        //json is denoted with 'key':'value'; it is consider with ("key"); 
+
+        // convert from object to json using json.stringify
+        let object = { name: 'Deepak', subject: 'js' };
+        console.log(object);
+        let json1 = JSON.stringify(object);
+        console.log(json1);
+
+        // convert from json to object using json.parse
+        let obj2 = JSON.parse(json1);
+        console.log(obj2);
+    </script>
+</body>
+
+</html>
