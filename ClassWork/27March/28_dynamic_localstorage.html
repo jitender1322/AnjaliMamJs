@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        tr,
+        th,
+        td {
+            border-collapse: collapse;
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="addData(event)">
+        <input type="text" id="nameid" placeholder="Enter name : " />
+        <input type="text" id="subjectid" placeholder="Enter Subject : " />
+        <input type="text" id="cityid" placeholder="Enter city : " />
+
+        <input type="submit" value="submit" name="submit" />
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>City</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+
+
+    <script>
+        function addData(e) {
+
+            e.preventDefault();
+
+            let tbody = document.getElementById("tbody");
+
+            tbody.innerHTML = "";
+            let name = document.getElementById("nameid");
+            let subject = document.getElementById("subjectid");
+            let city = document.getElementById("cityid");
+
+            // console.log(name.value);
+
+            var existingData = JSON.parse(localStorage.getItem("Student")) || [];
+            var id = existingData.length + 1;
+
+            console.log("------------>>>", existingData);
+
+            var obj = { id: id, name: name.value, subject: subject.value, city: city.value };
+            //console.log(obj);
+
+            existingData.push(obj);
+            localStorage.setItem("Student", JSON.stringify(existingData));
+            getDataFromLocal();
+        }
+
+        function getDataFromLocal() {
+
+            var tbody = document.getElementById("tbody");
+            tbody.innerHTML = "";
+
+            var allData = JSON.parse(localStorage.getItem("Student")) || [];
+
+
+
+            for (let i = 0; i < allData.length; i++) {
+                let row = tbody.insertRow();
+                // console.log(row);
+
+                let cell0 = row.insertCell(0);
+                let cell1 = row.insertCell(1);
+                let cell2 = row.insertCell(2);
+                let cell3 = row.insertCell(3);
+                let cell4 = row.insertCell(4);
+                let cell5 = row.insertCell(5);
+
+                // cell1.textContent = allData[i].name;
+                cell0.textContent = allData[i].id;
+                cell1.textContent = allData[i].name;
+                cell2.textContent = allData[i].subject;
+                cell3.textContent = allData[i].city;
+
+                cell4.innerHTML = "<Button class='btnedit' data-id='" + allData[i].id + "'> EDIT </button>";
+                cell5.innerHTML = "<Button class='btndel' data-id='" + allData[i].id + "'> DELETE </button>"
+                //console.log(cell5);
+
+            }
+
+            let allDelButton = document.querySelectorAll(".btndel");
+            //console.log(allDelButton);
+
+            allDelButton.forEach(function (btn) {
+                // console.log(btn);
+                btn.addEventListener("click", function (e) {
+                    // console.log("Button clicked");
+                    let id = e.target.getAttribute("data-id");
+
+                    //console.log(id);
+
+                    // fetch all records from localstorage
+                    let allRecords = JSON.parse(localStorage.getItem("Student"));
+
+                    let newRecords = allRecords.filter(item => item.id != id);
+                    console.log("new Record : ", newRecords);
+
+
+                    localStorage.setItem("Student", JSON.stringify(newRecords));
+                    getDataFromLocal();
+
+                })
+            })
+
+            let allEditButton = document.querySelectorAll('.btnedit');
+
+            allEditButton.forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    let id = e.target.getAttribute('data-id');
+                    let allRecords = JSON.parse(localStorage.getItem('student'));
+
+                    let specificRecord = allRecords.find(item => item.id == id);
+
+                    setDataInput(specificRecord);
+
+                })
+            })
+
+        }
+
+        function setDataInput(specificRecord) {
+            document.getElementById('id').value = specificRecord.id;
+            document.getElementById('nameid').value = specificRecord.name;
+            document.getElementById('subjectid').value = specificRecord.subject;
+            document.getElementById('cityid').value = specificRecord.city;
+        }
+
+        getDataFromLocal()
+    </script>
+</body>
+
+</html>

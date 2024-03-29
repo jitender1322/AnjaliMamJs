@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #3498db;
+        }
+
+        .task-form {
+            padding: 10px;
+            border-radius: 10px;
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .task-form input[type="text"],
+        .task-form select {
+            padding: 7px;
+            margin-bottom: 20px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .task-form button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0fa24c;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: .2s all;
+        }
+
+        .task-form button:hover {
+            background-color: #084e25;
+        }
+
+        .task-form h2 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .task-form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="task-form">
+        <h2>Add New Task</h2>
+        <form action="#">
+            <label for="taskTitle">Task Title</label>
+            <input type="text" id="taskTitle" name="taskTitle" placeholder="Enter task title" required>
+
+
+            <label for="developerName">Developer Name</label>
+            <input type="text" id="developerName" name="developerName" placeholder="Enter developer name" required>
+
+            <label for="completionStatus">Task Completion Status</label>
+            <select id="completionStatus" name="completionStatus" required>
+                <option value="incomplete">Incomplete</option>
+                <option value="complete">Complete</option>
+            </select>
+            <br>
+            <label for="dueDate">Due Date</label>
+            <input type="date" id="dueDate" name="dueDate" required>
+
+            <label for="priority">Priority</label>
+            <select id="priority" name="priority" required>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+
+            <label for="taskDescription">Task Description</label>
+            <textarea id="taskDescription" name="taskDescription" placeholder="Enter task description" rows="4"
+                required></textarea> <br>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+
+    <div id="container"></div>
+</body>
+
+</html>

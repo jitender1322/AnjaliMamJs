@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="return checkValidation(event)">
+        <input type="text" id="nameid" placeholder="Enter your name">
+        <br>
+        <input type="email" id="emailid" placeholder="Enter your email">
+        <br>
+        <input type="submit" name="submit" value="submit">
+    </form>
+
+    <script>
+        function checkValidation(e) {
+            e.preventDefault();
+            let name = document.getElementById('nameid');
+            let email = document.getElementById('emailid');
+            let emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+            if (name.value.length == 0) {
+                alert('Please Enter the Required name');
+                return false;
+            }
+            if (!isNaN(name.value)) {
+                alert('only charcter required')
+                return false
+            }
+
+            //to compare with regex we have to use .test keyword
+            if (!emailPattern.test(email.value)) {
+                alert('Fullfill the need ')
+                return false
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>

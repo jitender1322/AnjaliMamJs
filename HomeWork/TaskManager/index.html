@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-image: url('./bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background-color: rgba(228, 225, 222, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .login-container .fa-user,
+        .login-container .fa-lock {
+            margin-right: 10px;
+        }
+
+        .login-container .user-type-btns {
+            margin-top: 20px;
+            display: flex;
+        }
+
+        .login-container .user-type-btns button {
+            margin: 0 10px;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .login-container button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .login-container .user-type-btns button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Welcome to Task Manager</h2>
+        <div class="user-type-btns">
+            <button onclick="showTaskManagerLogin()">Task Manager</button>
+            <button onclick="showDeveloperLogin()">Developer</button>
+        </div>
+        <div id="developer-login" style="display: none;">
+            <h3>Developer Login</h3>
+            <form action="#">
+                <div>
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="dev" placeholder="Username">
+                </div>
+                <button id="devSub" type="submit"><a href="">Login</a></button>
+            </form>
+        </div>
+        <div id="task-manager-login" style="display: none;">
+            <h3>Task Manager Login</h3>
+            <form action="#">
+                <div>
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="manager" placeholder="Username">
+                </div>
+                <button id="mainSub" type="submit"><a id="log-1" href="">Login</a></button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showDeveloperLogin() {
+            document.getElementById("developer-login").style.display = "block";
+            document.getElementById("task-manager-login").style.display = "none";
+        }
+
+        function showTaskManagerLogin() {
+            document.getElementById("developer-login").style.display = "none";
+            document.getElementById("task-manager-login").style.display = "block";
+        }
+
+        let manager = document.getElementById('manager');
+
+        document.getElementById('mainSub').addEventListener('click', function (e) {
+            e.preventDefault();
+            localStorage.setItem('Name', manager.value)
+
+            if (manager.value == '') {
+                alert('Enter User Name')
+            }
+            else {
+                window.open('main.html', '_self')
+            }
+        })
+
+    </script>
+</body>
+
+</html>

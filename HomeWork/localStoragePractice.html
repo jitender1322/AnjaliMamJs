@@ -18,11 +18,25 @@
     <script>
         let form = document.querySelector('form');
 
-        form.addEventListener('submit', function () {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
             let name = document.getElementById('name');
             let sub = document.getElementById('sub');
             let city = document.getElementById('city');
 
+            let checkData = JSON.parse(localStorage.getItem('student')) || [];
+
+            let obj = {
+                name: name.value,
+                subject: sub.value,
+                city: city.value
+            }
+
+            checkData.push(obj);
+
+            localStorage.setItem('student', JSON.stringify(checkData))
+
+            console.log(checkData[1]);
         })
     </script>
 </body>
