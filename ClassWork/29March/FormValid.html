@@ -21,7 +21,8 @@
             e.preventDefault();
             let name = document.getElementById('nameid');
             let email = document.getElementById('emailid');
-            let emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            let emailPattern = "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
+            let passwordPattern = "^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,15}$";
 
             if (name.value.length == 0) {
                 alert('Please Enter the Required name');
@@ -33,6 +34,7 @@
             }
 
             //to compare with regex we have to use .test keyword
+
             if (!emailPattern.test(email.value)) {
                 alert('Fullfill the need ')
                 return false
