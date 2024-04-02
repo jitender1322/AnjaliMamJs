@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dragContainer {
+            height: 150px;
+            width: 150px;
+            background-color: gray;
+            cursor: move;
+        }
+
+        .mainContainer {
+            height: 310px;
+            width: 310px;
+            background-color: purple;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dragContainer" draggable="true" id="itemContainer" ondragstart="drag(event)"></div>
+    <div class="mainContainer" id="mainContainer" ondragover="allowDrag(event)" ondrop="drop(event)"></div>
+    <script>
+        function drag(e) {
+            //set data
+            e.dataTransfer.setData('text/html', "<p>Hello I'm Jitender</p>");
+        }
+        function allowDrag(e) {
+            e.preventDefault();
+        }
+        function drop(e) {
+            //get data
+            e.preventDefault();
+
+            let data = e.dataTransfer.getData('text/html');
+            let d1 = document.createElement('div');
+            d1.innerHTML = data
+            e.target.append(d1);
+        }
+    </script>
+</body>
+
+</html>
