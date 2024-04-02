@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number guessing</title>
+</head>
+<body>
+    <h2>Enter number between 1 to 100</h2>
+    <input type="number" placeholder="enter your number" id="inputid">
+    <button id="btn">click</button>
+    
+
+    <script>
+        let computer_choice=Math.floor(Math.random()*100)+1;
+        // console.log(computer_choice);
+        let button=document.getElementById('btn').addEventListener('click',function ()
+         {
+           let usernum= document.getElementById('inputid').value;
+           console.log(usernum);
+           
+           if (usernum>computer_choice)
+            {
+            console.log('guess lower number');
+           }
+           else if (usernum<computer_choice)
+            {
+                console.log('guess high number');
+           }
+           else
+           {
+            console.log('you won the match');
+           }
+        })
+    </script>
+
+</body>
+</html>

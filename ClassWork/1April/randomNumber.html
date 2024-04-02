@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number</title>
+</head>
+<body>
+    <button id="button1">click</button>
+    <h2 id="show"></h2>
+    
+    <script>
+        let button1=document.getElementById('button1');
+        button1.addEventListener('click',function ()
+         {
+            let show=document.getElementById('show');
+            let luckynumber=Math.floor(Math.random()*100)+1;
+            console.log(luckynumber);    
+            show.textContent="Lucky Number : "+luckynumber;
+        })
+    </script>
+
+</body>
+</html>

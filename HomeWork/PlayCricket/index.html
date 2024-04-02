@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Play The Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        #container {
+            background: url(./img/bg.jpg)no-repeat center/cover;
+            color: white;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        #box-1 {
+            width: 90%;
+            margin: 0 auto;
+            background: rgba(17, 17, 17, 0.623);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(255, 255, 255, 0.463);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgb(255, 255, 255);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 15px;
+        }
+
+        #box-1 img {
+            width: 15%;
+            cursor: pointer;
+        }
+
+        #box-2 {
+            width: 60%;
+            margin: 20px auto;
+            background: rgba(2, 2, 2, 0.623);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(255, 255, 255, 0.463);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgb(255, 255, 255);
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 15px;
+            display: none;
+        }
+
+        #box-2 img {
+            width: 25%;
+            cursor: pointer;
+        }
+
+        #box-3,
+        #box-4 {
+            width: 40%;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background: rgba(2, 2, 2, 0.623);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(255, 255, 255, 0.463);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgb(255, 255, 255);
+            border-radius: 15px;
+            display: none;
+        }
+
+        #box-3 button,
+        #box-4 button {
+            border: none;
+            margin: 10px;
+            padding: 12px 25px;
+            outline: none;
+            background-color: aqua;
+            color: navy;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .last {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="main">
+            <h1>Select Your Team</h1>
+            <div id="box-1">
+                <img src="./img/csk.png" alt="">
+                <img src="./img/delhi.png" alt="">
+                <img src="./img/mi.png" alt="">
+                <img src="./img/rr.png" alt="">
+                <img src="./img/sunrises.png" alt="">
+            </div>
+            <div id="box-2">
+                <img src="" class="myTeam" alt="">
+                <span>Vs</span>
+                <img src="" class="oppoTeam" alt="">
+            </div>
+            <div id="box-3">
+                <h2>Toss</h2>
+                <button>Head</button>
+                <button>Tail</button>
+            </div>
+            <div id="box-4">
+                <button>Batting</button>
+                <button>Bowling</button>
+            </div>
+        </div>
+
+        <h1 class="last">Opponent Choose To Bowl First</h1>
+    </div>
+
+    <script>
+        let allTeam = document.querySelectorAll('#box-1 img');
+        let arr = [];
+
+        allTeam.forEach(function (img) {
+            arr.push(img);
+
+            img.addEventListener('click', function (e) {
+                let myTeam = e.target.getAttribute('src');
+
+                document.querySelector('.myTeam').src = myTeam;
+                document.getElementById('box-2').style.display = 'flex';
+
+                let random = Math.floor(Math.random() * arr.length);
+
+                document.querySelector('.oppoTeam').src = arr[random].src;
+                document.getElementById('box-3').style.display = 'block';
+            })
+        })
+
+        let tossBtn = document.querySelectorAll('#box-3 button');
+        let arr2 = [];
+
+        tossBtn.forEach(function (btn) {
+            arr2.push(btn);
+
+            btn.addEventListener('click', function (e) {
+                let getBtn = e.target.textContent;
+                let random = Math.floor(Math.random() * arr2.length);
+                console.log(arr2[random].textContent);
+                if (getBtn == arr2[random].textContent) {
+                    alert('you winn the toss');
+                    document.getElementById('box-4').style.display = 'block';
+                }
+                else {
+                    alert('You lose the toss')
+                    document.querySelector('.last').style.display = 'block';
+                }
+
+                document.getElementById('box-1').style.display = 'none';
+                document.getElementById('box-3').style.display = 'none';
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>
