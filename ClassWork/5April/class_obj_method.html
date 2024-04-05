@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- visibility modes or access specifier :
+
+            there are three types of access specifier :
+
+            1) private : which is only access by own class
+            2) public : which is access by own and other class
+            3) protected : which is access by own and child class
+
+        variable access specifier :
+
+            there are two ways to define variable (member) in class
+        
+             1) partial private : which is represent by _varname on prefix (traditional)
+             2) truly private : which is represent by #varname (declare in ES6)
+        -->
+
+    <script>
+        // class Student {
+        //     inputData(name, subject) {
+        //         this.name = name;
+        //         this.subject = subject;
+        //     }
+        //     displayData() {
+        //         console.log(`name = ${this.name}`);
+        //         console.log(`subject = ${this.subject}`);
+        //     }
+        // }
+
+        // let student = new Student();
+        // student.inputData('aaa', 'full stack');
+        // student.displayData();
+
+        class vehicle {
+            _vehicleType = 'Car';
+            brandname = 'honda';
+            #model = 'suv';
+
+            change(v1, v2, v3) {
+                this._vehicleType = v1;
+                this.brandname = v2;
+                this.#model = v3;
+            }
+        }
+
+        let obj = new Vehicle();
+        //visibility
+        console.log(obj._vehicleType);
+        console.log(obj.brandname);
+        // console.log(obj.#model);
+
+        //accessibility
+        obj.change('bike', 'suzuki', 'sample');
+
+        console.log(obj._vehicleType);
+        console.log(obj.brandname);
+
+        obj._vehicleType = 'truck';
+        obj.brandname = 'bus';
+
+        console.log(obj._vehicleType);
+        console.log(obj.brandname);
+    </script>
+</body>
+
+</html>
