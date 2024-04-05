@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- constructor : constructor is a special member function
+    
+                which is invoke automatically whenever we create object of class
+                constructor name and class name both are same in programming
+                but in js we use consutructor as a key word to define it
+            
+                e.g.  class student {
+                    constructor(){
+
+                    }
+        
+        =====> types of constructor
+                    there are two tyep of constructor
+
+                    1) default constructor
+
+                        class student{
+                            constructor(){
+
+                            }
+                        }
+
+                    2) parameterized constructor or custom constructor 
+
+                        class student{
+                            constructor(parameter){
+
+                            }
+                        }
+    }-->
+
+    <script>
+
+        // class student  //class
+        // {
+        //     constructor() {
+        //         console.log('Im constructor');
+        //     }
+        //     displayInfo() {
+        //         console.log('Welcome');
+        //     }
+        // }
+
+        // let obj = new student();  //object creation
+
+        // let obj2 = new student();
+
+        // obj.displayInfo(); // acsess the property using obj
+
+        //parameterized constructor or custom constructor
+
+        class student {
+            constructor(name, city) {
+                this.name = name;
+                this.city = city;
+            }
+            display() {
+                console.log(`name = ${this.name}`);
+                console.log(`city = ${this.city}`);
+            }
+        }
+
+        let obj = new student('deepak', 'surat');
+        obj.display();
+
+    </script>
+</body>
+
+</html>

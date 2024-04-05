@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        #container {
+            height: 100vh;
+            background: url(./img/bg.jpg)no-repeat center center/cover;
+        }
+
+        .logo {
+            width: 10%;
+            margin: 0px auto;
+            padding: 10px 0;
+        }
+
+        .wrapper {
+            width: 60%;
+            margin: 0 auto;
+            border-radius: 15px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url(./img/bg2.jpg);
+            background-position: center;
+            background-size: 100%;
+            padding: 20px;
+            color: white;
+        }
+
+        input,
+        select {
+            width: 45%;
+            padding: 6px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            margin: 10px;
+            background-color: rgba(240, 248, 255, 0.762);
+        }
+
+        label {
+            margin-left: 10px;
+            text-transform: capitalize;
+            font-size: 18px;
+            text-shadow: 4px 4px 7px black;
+        }
+
+        h2,
+        h4 {
+            margin: 20px 0;
+            text-shadow: 4px 4px 7px black;
+        }
+
+        .pdiv {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        #btn {
+            background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+            color: white;
+            padding: 10px 20px;
+            font-weight: 700;
+            border: 2px solid white;
+            outline: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="logo">
+            <img src="./img/kalyan_logo.svg" alt="">
+        </div>
+        <div class="wrapper">
+            <input type="text" placeholder="Enter Your Name...">
+            <select name="gender" id="gender">
+                <option value="Gender">Gender</option>
+                <option value="Male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <br>
+            <input type="text" id="age" placeholder="Enter Your Age...">
+            <select name="product" id="product">
+                <option value="product">product</option>
+                <option value="Ring">Ring</option>
+                <option value="Neklace">Neklace</option>
+                <option value="Bracelate">Bracelate</option>
+            </select>
+            <br>
+            <input type="text" id="weight" placeholder="Enter Product Gram :">
+            <label for="gold">current gold price (1Gm) : 5752</label>
+            <br>
+            <div class="pdiv">
+                <button id="btn">Generate Bill</button>
+            </div>
+            <h2>Total Price Of Your Gold : <span id="totalPrice"></span></h2>
+
+            <h4>Making Charge (1Gm ₹845)</h4>
+            <h4>Total Making Charges : <span id="totalMaking"></span></h4>
+            <h4>Discount : <span id="discount"></span></h4>
+            <h4>Net Payble Amount : <span id="netAmount"></span></h4>
+        </div>
+    </div>
+
+    <script>
+        let btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function () {
+            let age = document.getElementById('age');
+            let gender = document.getElementById('gender');
+            let weight = document.getElementById('weight');
+            let totalPrice = document.getElementById('totalPrice');
+            let totalMaking = document.getElementById('totalMaking');
+            let discount = document.getElementById('discount');
+            let netAmount = document.getElementById('netAmount');
+
+            totalPrice.innerText = weight.value * 5752;
+            totalMaking.innerText = weight.value * 845;
+
+            let tp = parseInt(totalPrice.innerText);
+            let tm = parseInt(totalMaking.innerText);
+
+            if (gender.value == 'Male') {
+                if (age.value > 65) {
+                    if (tp > 21000 && tp < 31000) {
+                        discount.innerText = '20%';
+                    }
+                    else if (tp > 31000 && tp < 51000) {
+                        discount.innerText = '30%';
+                    }
+                    else if (tp > 51000) {
+                        discount.innerText = '35%';
+                    }
+                }
+                else if (age.value < 65) {
+                    if (tp > 21000 && tp < 31000) {
+                        discount.innerText = '10%';
+                    }
+                    else if (tp > 31000 && tp < 51000) {
+                        discount.innerText = '20%';
+                    }
+                    else if (tp > 51000) {
+                        discount.innerText = '30%';
+                    }
+                }
+            }
+
+            if (gender.value == 'Female') {
+                if (age.value > 65) {
+                    if (tp > 21000 && tp < 31000) {
+                        discount.innerText = '25%'
+                    }
+                    else if (tp > 31000 && tp < 51000) {
+                        discount.innerText = '35%';
+                    }
+                    else if (tp > 51000) {
+                        discount.innerText = '40%';
+                    }
+                }
+                else if (age.value < 65) {
+                    if (tp > 21000 && tp < 31000) {
+                        discount.innerText = '15%';
+                    }
+                    else if (tp > 31000 && tp < 51000) {
+                        discount.innerText = '25%';
+                    }
+                    else if (tp > 51000) {
+                        discount.innerText = '30%';
+                    }
+                }
+            }
+
+            let dis = parseInt(discount.innerText.replace('%', '')) / 100;
+            let sum = tm + tp;
+            netAmount.innerText = sum - (sum * dis);
+        })
+    </script>
+</body>
+
+</html>
