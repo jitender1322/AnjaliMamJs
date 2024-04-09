@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="createNew()">Click</button>
+    <script>
+        function createNew() {
+            let windowFeature = "height = 500px , width = 600px";
+            let newWindow = window.open("about:blank", "_blank", windowFeature);
+
+            if (newWindow) {
+                newWindow.open();
+                let h1 = newWindow.document.createElement('h1');
+                h1.textContent = "hello this is new window";
+
+                newWindow.document.body.append(h1);
+            }
+        }
+    </script>
+</body>
+
+</html>

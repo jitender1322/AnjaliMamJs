@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        inheritance : one class derived prperties of another class its called inheritance.
+
+        using of inheritance we can reduce our code.
+
+        inheritance provide reusability.
+
+        using of inheritance we can save our time.
+
+        inheritance only possible with extends keyword.
+
+        1) parent class / base class / super class 
+                    |  
+                    V
+
+        2) child class / derived class / sub class
+
+            here child class can access prperties of parent class.
+
+    always create object of child (derived) class.
+
+        ===>> constructor overriding : when parent and child have same constructor
+                it will override constructor.
+
+                this() : refer correct class propertise
+                super() : using of super keyword we can access specific parent's properties
+     -->
+    <script>
+        class parent {
+            constructor() {
+                console.log("this is parent class");
+            }
+        }
+
+        class child extends parent {
+            constructor(name, subject) {
+                super(name);
+                this.subject = subject;
+                console.log("this is child class");
+            }
+            display() {
+                console.log("subject display :", this.subject);
+            }
+        }
+
+        //object creation
+
+        let obj = new child('tanu', 'mern');
+        obj.display()
+    </script>
+</body>
+
+</html>
