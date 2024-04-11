@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        encapsulation : encapsulation most important concept of oops
+
+        it similar like capsule
+
+        wrap data member and member function.
+
+        ==> data hidden
+        
+        ==> getter and setter
+     -->
+    <script>
+        class student {
+            constructor(id, name) {
+                this.id = id;
+                this.name = name;
+            }
+            setName(name) {
+                this.name = name;
+            }
+            getName() {
+                return this.name;
+            }
+            setSubject(subject) {
+                this.subject = subject;
+            }
+            getSubject() {
+                return this.subject;
+            }
+        }
+        let obj = new student();
+        obj.setName('js student');
+        console.log(obj.getName());
+
+        obj.setSubject('javascript');
+        console.log(obj.getSubject());
+    </script>
+</body>
+
+</html>

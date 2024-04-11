@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototypal inheritance</title>
+</head>
+
+<body>
+    <h1>prototypal inheritance</h1>
+    <!-- 
+        types of inheritance :
+
+        1) classical inheritance
+
+            class a{
+
+            }
+            class b extends a{
+
+            }
+
+        2) prototypical inheritance
+
+                create object of another class and extend properties        
+     -->
+    <script>
+        const vehicle = {
+            name: 'vehicle',
+            brand: 'vehicle',
+
+            display: function () {
+                console.log('vehicle method');
+            }
+        }
+
+
+
+        // object creation
+        let carobj = Object.create(vehicle);
+
+        console.log(carobj.name);
+        console.log(carobj.brand);
+
+        // member add
+        carobj.name = 'Hyunndai';
+        carobj.model = 'Xseno';
+        // method add
+        carobj.mymethod = function () {
+            console.log('car method');
+        }
+        carobj.display();
+        console.log(carobj.name);
+        console.log(carobj.model);
+        carobj.mymethod();
+    </script>
+</body>
+
+</html>
