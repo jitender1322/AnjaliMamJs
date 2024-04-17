@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // higher order is a function which can accept number of function as a parameter.
+
+        function higher(callback) {
+            console.log('this is higher order function');
+            callback('this is callback');
+        }
+
+        function display(msg) {
+            console.log(msg);
+        }
+
+        higher(display);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        arrow function : arrow function is also known as anonymous function
+            function without any name
+     -->
+    <script>
+        function display() {
+            console.log("hello normal function");
+        }
+        display();
+
+        const dataDisplay = () => {
+            console.log("this is arrow function");
+        }
+        dataDisplay();
+
+        function Display(num1, num2) {
+            let ans = num1 + num2;
+            console.log(ans);
+        }
+
+        let ans = (num1, num2) => num1 + num2;
+
+        Display(10, 20);
+        console.log(ans(20, 50));
+    </script>
+</body>
+
+</html>

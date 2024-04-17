@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async and sync</title>
+</head>
+<body>
+    <h1 id="myh1"></h1>
+    <script>
+        async function fetchData()
+         {
+            let response=await fetch('https://jsonplaceholder.typicode.com/albums/');
+            console.log(response);
+            let data=await response.json();
+            console.log(data);    
+            console.log(data.title);
+            
+            document.getElementById('myh1').textContent=data.title
+            
+             data.forEach(function (element)
+             {
+                console.log(element.title);    
+            })
+
+        }
+        fetchData();
+    </script>
+</body>
+</html>

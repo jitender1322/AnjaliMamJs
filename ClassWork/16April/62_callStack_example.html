@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callStack</title>
+</head>
+<body>
+    <script>
+
+        function three()
+         {
+            console.log('hii this is function 3');
+        }
+
+        function two(callback)
+         {
+            callback();
+        }
+
+        function one(callback)
+         {
+            callback(three);
+        }
+
+        // it is the main function
+        function main(callback) 
+         {
+            callback(two);
+            // function two is passed to the 
+        }
+
+        main(one); 
+        // function one is passed to the main function
+
+    </script>
+</body>
+</html>
