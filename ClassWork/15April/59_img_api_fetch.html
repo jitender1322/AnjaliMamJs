@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <ul id="myul">
+
+    </ul>
+
+
+    <script>
+
+        let ul = document.getElementById("myul");
+
+        async function fetchData() {
+            let response = await fetch("https://jsonplaceholder.typicode.com/photos");
+
+            let allRecords = await response.json();
+
+            console.log(allRecords);
+            allRecords.forEach((photos) => {
+                let li = document.createElement("li");
+
+                li.innerHTML = `<img src='${photos.url}' height='50px' width='50px' >`;
+                ul.append(li);
+            })
+        }
+
+        fetchData();
+    </script>
+</body>
+
+</html>
