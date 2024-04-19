@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let num1 = 100;
+        // let num2 = 200;
+
+        // let wr = new Promise((resolve, reject) => {
+        //     resolve(num2 + 1000);
+        // })
+        // console.log(num1 + num2);
+
+        // wr.then((rValue) => {
+        //     console.log(num1 + rValue);
+        // })
+
+
+        // with multiple parameter
+
+        let num1 = 100;
+        let num2 = 200;
+
+        let wr = new Promise((resolve, reject) => {
+            resolve([num1 + 1000, num2 + 1000]);
+        })
+        console.log(num1 + num2);
+
+        wr.then((rValue) => {
+            console.log([rValue[0] + rValue[1]]);
+        })
+
+    </script>
+</body>
+
+</html>
