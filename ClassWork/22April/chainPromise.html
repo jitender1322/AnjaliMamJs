@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let myfun = new Promise((resolve, reject) => {
+            console.log("process 1");
+            resolve("blank milk bottle")
+            console.log("blank milk bottle");
+        }).then((resolve) => {
+            setTimeout(() => {
+                console.log("process 2");
+                resolve("milk fill up")
+                console.log("milk fill up");
+            }, 2000)
+            return resolve;
+        }).then((resolve) => {
+            console.log("process 3");
+            console.log(resolve);
+        })
+    </script>
+</body>
+
+</html>
