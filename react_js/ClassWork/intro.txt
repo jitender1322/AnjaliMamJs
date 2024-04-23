@@ -1,0 +1,50 @@
+step number one => environment for javascript - using of node we can execute and run js files
+                   which is provide npm and npx
+
+=> npm : node pacakge manager - using of npm we can install package
+=> npx : node pacakge executer - using of npx we can execute package
+
+
+-------------------------------------
+
+
+LTS : long term support
+
+need to check version of node js 
+
+node -v
+
+npm -v 
+
+-------------------------------------
+
+for react installation : 
+
+npm install create-react-app
+
+or
+
+npm install -g create-react-app
+
+-------------------------------------
+
+for project creation (traditional method)
+
+npx create-react-app <projectname>
+
+cd projectname
+
+npm start
+
+-------------------------------------
+latest react project creation
+
+npm create vite
+or
+npm create vite@latest
+
+cd projectname
+
+npm install
+
+npm run dev
