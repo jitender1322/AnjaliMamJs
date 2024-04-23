@@ -48,3 +48,21 @@ cd projectname
 npm install
 
 npm run dev
+
+-------------------------------------
+
+Create React App (CRA) has long been the go-to tool for most
+developer to scaffold React projects and set up a dev server.
+it offers a mordern build setup with no configuration.
+
+vite is a next-generation, front-end tool that focuses on speed
+and performance.
+
+it consists of two major part
+
+1) A Developer Server
+2) A build command
+
+-------------------------------------
+
+SWC : SWC(Speedy Web Compiler)
