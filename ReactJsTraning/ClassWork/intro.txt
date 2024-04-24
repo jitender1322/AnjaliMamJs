@@ -66,3 +66,13 @@ it consists of two major part
 -------------------------------------
 
 SWC : SWC(Speedy Web Compiler)
+
+-------------------------------------
+
+index.html
+     |
+main.jsx
+     |
+     App.jsx
+     |
+     Rest of the component

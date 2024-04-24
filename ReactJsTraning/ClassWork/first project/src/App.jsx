@@ -1,9 +1,11 @@
 import React from "react";
+import MyFristComponent from "./FunctionComponent/MyFristComponent";
 
 export default function App() {
   return (
     <div>
-      <Heading />
+      <h1>My name is jitender</h1>
+      <MyFristComponent />
     </div>
   );
 }
