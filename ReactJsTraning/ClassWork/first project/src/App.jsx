@@ -1,11 +1,10 @@
 import React from "react";
-import MyFristComponent from "./FunctionComponent/MyFristComponent";
+import AllJsxExample from "./FunctionComponent/AllJsxExample";
 
 export default function App() {
   return (
     <div>
-      <h1>My name is jitender</h1>
-      <MyFristComponent />
+      <AllJsxExample />
     </div>
   );
 }
