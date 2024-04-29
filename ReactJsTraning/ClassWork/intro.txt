@@ -37,6 +37,7 @@ cd projectname
 npm start
 
 -------------------------------------
+
 latest react project creation
 
 npm create vite
@@ -76,3 +77,12 @@ main.jsx
      App.jsx
      |
      Rest of the component
+
+-------------------------------------
+
+State : state is behaviour of component
+        it is mutable property (we can change it)
+        for exp. car - color - black   at purchase
+                 car - color - white   at delivery
+
+                 here we are changing state of car color
