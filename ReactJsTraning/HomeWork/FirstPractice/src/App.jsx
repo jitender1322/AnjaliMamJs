@@ -6,6 +6,10 @@ import GussesName from "./CustomCreation/GussesName";
 import FontSize from "./CustomCreation/FontSize";
 import Bulb from "./CustomCreation/Bulb";
 import BtnColor from "./CustomCreation/BtnColor";
+import Factorial from "./CustomCreation/Factorial";
+import MonthToDays from "./CustomCreation/MonthToDays";
+import DaysToMonth from "./CustomCreation/DaysToMonth";
+import Years from "./CustomCreation/Years";
 
 export default function App() {
   return (
@@ -17,6 +21,10 @@ export default function App() {
       {/* <FontSize /> */}
       {/* <Bulb /> */}
       {/* <BtnColor /> */}
+      {/* <Factorial /> */}
+      {/* <MonthToDays /> */}
+      {/* <DaysToMonth /> */}
+      <Years />
     </div>
   );
 }
