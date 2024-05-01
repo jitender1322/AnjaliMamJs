@@ -16,7 +16,7 @@ export default function Factorial() {
 
   return (
     <div>
-      <input type="text" onChange={(e) => getIvalue(e.target.value)} />
+      <input type="text" onChange={(e) => getIvalue(e?.target?.value)} />
       <button onClick={btnHandler}>Get Factorial</button>
       <h1>{data}</h1>
     </div>

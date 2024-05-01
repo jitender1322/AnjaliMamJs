@@ -86,3 +86,20 @@ State : state is behaviour of component
                  car - color - white   at delivery
 
                  here we are changing state of car color
+
+-------------------------------------
+
+There are two types of components
+
+1) function component : esay to understand
+
+2) Class component : it is complex to use - it is inherited by component Class
+                     
+                     class components have render() method which return jsx
+
+                     in function component there is direct return method
+
+-------------------------------------
+
+Spread Operator : to combine multiple array in one array
+                  its called spread operator which is denoted by ... (dot operator or spread operator)

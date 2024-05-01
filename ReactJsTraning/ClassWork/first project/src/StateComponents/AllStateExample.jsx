@@ -9,6 +9,7 @@ import StateExample7 from "./StateExample7";
 import StateExample8 from "./StateExample8";
 import StateExample9 from "./StateExample9";
 import StateExample10 from "./StateExample10";
+import StateExample11 from "./StateExample11";
 
 export default function AllStateExample() {
   return (
@@ -22,7 +23,8 @@ export default function AllStateExample() {
       {/* <StateExample7 /> */}
       {/* <StateExample8 /> */}
       {/* <StateExample9 /> */}
-      <StateExample10 />
+      {/* <StateExample10 /> */}
+      <StateExample11 />
     </div>
   );
 }

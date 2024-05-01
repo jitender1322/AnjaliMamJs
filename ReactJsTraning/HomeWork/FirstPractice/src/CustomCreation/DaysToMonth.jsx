@@ -11,7 +11,7 @@ export default function DaysToMonth() {
   return (
     <div>
       <input type="text" onChange={(e) => setDays(e.target.value)} />
-      <button onClick={btnHandler}>get Days</button>
+      <button onClick={btnHandler}>get Month</button>
       <h1>{data}</h1>
     </div>
   );

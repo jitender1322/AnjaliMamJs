@@ -3,6 +3,7 @@ import AllJsxExample from "./JsxComponent/AllJsxExample";
 import AllFunctionExample from "./FunctionComponent/AllFunctionExample";
 import AllStyleExample from "./StyleComponent/AllStyleExample";
 import AllStateExample from "./StateComponents/AllStateExample";
+import AllClassComponent from "./ClassComponents/AllClassComponent";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       {/* <AllFunctionExample /> */}
       {/* <AllStyleExample /> */}
       <AllStateExample />
+      {/* <AllClassComponent /> */}
     </div>
   );
 }
