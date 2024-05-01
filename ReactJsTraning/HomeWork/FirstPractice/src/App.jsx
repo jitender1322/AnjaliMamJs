@@ -10,6 +10,7 @@ import Factorial from "./CustomCreation/Factorial";
 import MonthToDays from "./CustomCreation/MonthToDays";
 import DaysToMonth from "./CustomCreation/DaysToMonth";
 import Years from "./CustomCreation/Years";
+import Fruit from "./CustomCreation/Fruit";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
       {/* <MonthToDays /> */}
       {/* <DaysToMonth /> */}
       {/* <Years /> */}
+      <Fruit />
     </div>
   );
 }

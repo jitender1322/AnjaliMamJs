@@ -1,0 +1,44 @@
+body {
+    background-color: gold;
+}
+
+.container {
+    display: block;
+    text-align: center;
+    background-color: white;
+    width: 55%;
+    height: 400px;
+    margin: 30px auto;
+    padding: 20px 0;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.container input {
+    border: 2px solid black;
+    outline: none;
+    padding: 10px 10px;
+    border-radius: 7px;
+    margin: 0 10px;
+    background-color: yellow;
+}
+
+.container input::placeholder {
+    color: black;
+}
+
+.container button {
+    padding: 9px 20px;
+    border-radius: 7px;
+    border: 2px solid black;
+    outline: none;
+    cursor: pointer;
+    background-color: yellow;
+}
+
+li {
+    list-style: none;
+    margin: 10px 0;
+    text-transform: capitalize;
+    font-weight: 800;
+}
