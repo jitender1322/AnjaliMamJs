@@ -23,16 +23,18 @@ export default function Fruit() {
         placeholder="Enter Fruit Name"
         onChange={(e) => setFruit(e?.target?.value)}
       />
-      <ul>
-        {array.map((e, i) => {
-          return <li key={i}> {e} </li>;
-        })}
-      </ul>
-      <ul>
-        {array2.map((e, i) => {
-          return <li key={i}> {e} </li>;
-        })}
-      </ul>
+      <div className="flex">
+        <ul>
+          {array.map((e, i) => {
+            return <li key={i}> {e} </li>;
+          })}
+        </ul>
+        <ul>
+          {array2.map((e, i) => {
+            return <li key={i}> {e} </li>;
+          })}
+        </ul>
+      </div>
       <button onClick={handler}>Add</button>
       <button onClick={reverse}>Reverse</button>
     </div>

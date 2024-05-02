@@ -1,44 +1,55 @@
-body {
-    background-color: gold;
+/* body {
+    background: url('fruitbg.jpg')no-repeat center center/cover;
 }
 
 .container {
     display: block;
+    background: url('fruitbg2.jpg')no-repeat center center/cover;
     text-align: center;
-    background-color: white;
     width: 55%;
     height: 400px;
-    margin: 30px auto;
-    padding: 20px 0;
-    border-radius: 10px;
-    border: 2px solid black;
+    margin: 70px auto;
+    padding-top: 100px;
+    border-radius: 25px;
+    border: #F95700 2px dotted;
 }
 
 .container input {
-    border: 2px solid black;
+    border: none;
     outline: none;
+    width: 250px;
     padding: 10px 10px;
     border-radius: 7px;
-    margin: 0 10px;
-    background-color: yellow;
+    margin: 10px;
+    background-color: #F95700;
+    color: #FFFFFF;
 }
 
 .container input::placeholder {
-    color: black;
+    color: white;
 }
 
 .container button {
     padding: 9px 20px;
     border-radius: 7px;
-    border: 2px solid black;
+    border: none;
     outline: none;
     cursor: pointer;
-    background-color: yellow;
+    margin: 5px;
+    color: #FFFFFF;
+    background-color: #F95700;
 }
 
 li {
+    color: #F95700;
     list-style: none;
     margin: 10px 0;
     text-transform: capitalize;
     font-weight: 800;
 }
+
+.flex {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+} */

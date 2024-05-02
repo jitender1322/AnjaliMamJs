@@ -103,3 +103,13 @@ There are two types of components
 
 Spread Operator : to combine multiple array in one array
                   its called spread operator which is denoted by ... (dot operator or spread operator)
+
+-------------------------------------
+
+props : property of component
+        
+        using of props we can transfer data parent component to child component
+
+        props are immutable ( we can't change it value)
+
+        <childComponent key="value">

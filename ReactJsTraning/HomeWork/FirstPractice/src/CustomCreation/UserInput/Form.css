@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #83C9F4;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: #A3D5FF;
+    text-align: center;
+}
+
+input,
+select {
+    width: 400px;
+    padding: 7px;
+    margin: 10px;
+    background-color: #D9F0FF;
+    border: 1px solid #83C9F4;
+    border-radius: 5px;
+    outline: none;
+}
+
+input::placeholder {
+    color: black;
+}
+
+button {
+    padding: 7px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 1px solid black;
+    cursor: pointer;
+    outline: none;
+}
+
+h4 {
+    text-transform: capitalize;
+    margin: 10px 0;
+    color: black;
+}
+
+.user-img {
+    width: 100px;
+    height: 100px;
+    background-color: #83C9F4;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-img img {
+    width: 100px;
+    margin: auto;
+}
+
+.card {
+    width: 26%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin: 30px auto;
+    padding: 25px 10px;
+    /* text-align: center; */
+    /* glass formism */
+    background: rgba(217, 240, 255, 0.65);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(14.7px);
+    border: 1px solid rgba(217, 240, 255, 0.33);
+}
