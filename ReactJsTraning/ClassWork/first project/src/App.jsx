@@ -13,8 +13,8 @@ export default function App() {
       {/* <AllFunctionExample /> */}
       {/* <AllStyleExample /> */}
       {/* <AllStateExample /> */}
-      {/* <AllClassComponent /> */}
-      <AllPropsExample />
+      <AllClassComponent />
+      {/* <AllPropsExample /> */}
     </div>
   );
 }
