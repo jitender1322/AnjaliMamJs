@@ -12,6 +12,7 @@ import DaysToMonth from "./CustomCreation/DaysToMonth";
 import Years from "./CustomCreation/Years";
 import Fruit from "./CustomCreation/Fruit";
 import First from "./CustomCreation/UserInput/First";
+import ArrayinObj from "./CustomCreation/ArrayinObj";
 
 export default function App() {
   return (
@@ -28,7 +29,8 @@ export default function App() {
       {/* <DaysToMonth /> */}
       {/* <Years /> */}
       {/* <Fruit /> */}
-      <First />
+      {/* <First /> */}
+      <ArrayinObj />
     </div>
   );
 }
