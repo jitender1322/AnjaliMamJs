@@ -5,6 +5,7 @@ import AllStyleExample from "./StyleComponent/AllStyleExample";
 import AllStateExample from "./StateComponents/AllStateExample";
 import AllClassComponent from "./ClassComponents/AllClassComponent";
 import AllPropsExample from "./Props/AllPropsExample";
+import AllLocalStorageExample from "./LocalStorageExample/AllLocalStorageExample";
 
 export default function App() {
   return (
@@ -13,8 +14,9 @@ export default function App() {
       {/* <AllFunctionExample /> */}
       {/* <AllStyleExample /> */}
       {/* <AllStateExample /> */}
-      <AllClassComponent />
+      {/* <AllClassComponent /> */}
       {/* <AllPropsExample /> */}
+      <AllLocalStorageExample />
     </div>
   );
 }
