@@ -7,18 +7,28 @@ export default function ArrayinObj() {
   const [city, setCity] = useState("");
   const [subject, setSubject] = useState("");
 
+  const [data1, setData1] = useState("");
+  const [data2, setData2] = useState("");
+  const [data3, setData3] = useState("");
+  const [data4, setData4] = useState("");
+
   const [click, setClick] = useState(false);
 
   const obj = [
     {
-      id: id,
-      name: name,
-      city: city,
-      subject: subject,
+      id: data1,
+      name: data2,
+      city: data3,
+      subject: data4,
     },
   ];
 
   const handler = () => {
+    setData1(id);
+    setData2(name);
+    setData3(city);
+    setData4(subject);
+
     setClick(true);
   };
   return (

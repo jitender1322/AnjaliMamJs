@@ -3,16 +3,26 @@ import React from "react";
 export default function ArrayinObj2(props) {
   return (
     <div>
-      {props.product.map((item, i) => {
-        return (
-          <div key={i}>
-            <h3> {item.id} </h3>
-            <h3> {item.name} </h3>
-            <h3> {item.city} </h3>
-            <h3> {item.subject} </h3>
-          </div>
-        );
-      })}
+      <table>
+        <tbody>
+          <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>City</td>
+            <td>Subject</td>
+          </tr>
+          {props.product.map((item, i) => {
+            return (
+              <tr key={i}>
+                <td> {item.id} </td>
+                <td> {item.name} </td>
+                <td> {item.city} </td>
+                <td> {item.subject} </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }

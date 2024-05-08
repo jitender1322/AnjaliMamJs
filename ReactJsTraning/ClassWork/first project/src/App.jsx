@@ -6,6 +6,7 @@ import AllStateExample from "./StateComponents/AllStateExample";
 import AllClassComponent from "./ClassComponents/AllClassComponent";
 import AllPropsExample from "./Props/AllPropsExample";
 import AllLocalStorageExample from "./LocalStorageExample/AllLocalStorageExample";
+import MapCrup from "./MapCrudExample/MapCrud";
 
 export default function App() {
   return (
@@ -16,7 +17,8 @@ export default function App() {
       {/* <AllStateExample /> */}
       {/* <AllClassComponent /> */}
       {/* <AllPropsExample /> */}
-      <AllLocalStorageExample />
+      {/* <AllLocalStorageExample /> */}
+      <MapCrup />
     </div>
   );
 }
