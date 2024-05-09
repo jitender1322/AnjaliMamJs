@@ -13,6 +13,7 @@ import Years from "./CustomCreation/Years";
 import Fruit from "./CustomCreation/Fruit";
 import First from "./CustomCreation/UserInput/First";
 import ArrayinObj from "./CustomCreation/ArrayinObj";
+import MapCrud from "./CustomCreation/Crud/MapCrud";
 
 export default function App() {
   return (
@@ -30,7 +31,8 @@ export default function App() {
       {/* <Years /> */}
       {/* <Fruit /> */}
       {/* <First /> */}
-      <ArrayinObj />
+      {/* <ArrayinObj /> */}
+      <MapCrud />
     </div>
   );
 }

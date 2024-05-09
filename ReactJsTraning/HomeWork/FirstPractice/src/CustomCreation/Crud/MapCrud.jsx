@@ -1,28 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 
 export default function MapCrud() {
   const [name, setName] = useState("");
   const [subject, setSubject] = useState("");
   const [city, setCity] = useState("");
 
-  const [record, setRecord] = useState([]);
-  const [editIndex, setEditIndex] = useState(null);
+  const [data, setData] = useState([]);
+  const [value, setValue] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let obj = { name, subject, city };
 
-    const newRecord = { name, subject, city };
+    if (value != null) {
+      const newData = [...data];
+      newData[value] = obj;
+      setData([...newData]);
 
-    if (editIndex != null) {
-      const updateRecord = [...record];
-
-      console.log("update");
-      updateRecord[editIndex] = newRecord;
-      setRecord(updateRecord);
-
-      setEditIndex(null);
+      setValue(null);
     } else {
-      setRecord([...record, newRecord]);
+      setData([...data, obj]);
     }
 
     setName("");
@@ -30,24 +28,23 @@ export default function MapCrud() {
     setCity("");
   };
 
-  const handleEdit = (index) => {
-    const fetchData = record[index];
-
-    setName(fetchData.name);
-    setSubject(fetchData.subject);
-    setCity(fetchData.city);
-
-    setEditIndex(index);
+  const handleDelete = (index) => {
+    const oldData = data;
+    oldData.splice(index, 1);
+    setData([...oldData]);
   };
 
-  const handleDelete = (index) => {
-    let lastRecord = record;
-    lastRecord.splice(index, 1);
-    setRecord([...lastRecord]);
+  const handleEdit = (index) => {
+    const oldData = data[index];
+    setName(oldData.name);
+    setSubject(oldData.subject);
+    setCity(oldData.city);
+
+    setValue(index);
   };
 
   return (
-    <div>
+    <div style={{ textAlign: "center", margin: "10px 0" }}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -67,27 +64,24 @@ export default function MapCrud() {
           value={city}
           onChange={(e) => setCity(e?.target?.value)}
         />
-        <button type="submit">{editIndex != null ? "Update" : "Submit"}</button>
+        <button type="submit">{value != null ? "Update" : "Submit"}</button>
       </form>
-
-      <hr />
-
-      <table border={1} style={{ borderCollapse: "collapse" }}>
+      <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Subject</th>
-            <th>City</th>
-            <th colSpan={2}>Action</th>
+            <td>Name</td>
+            <td>Subject</td>
+            <td>City</td>
+            <td colSpan={2}>Action</td>
           </tr>
         </thead>
         <tbody>
-          {record.map((item, index) => {
+          {data.map((item, index) => {
             return (
               <tr key={index}>
-                <td>{item.name}</td>
-                <td>{item.subject}</td>
-                <td>{item.city}</td>
+                <td> {item.name} </td>
+                <td> {item.subject} </td>
+                <td> {item.city} </td>
                 <td>
                   {<button onClick={() => handleEdit(index)}>Edit</button>}
                 </td>
