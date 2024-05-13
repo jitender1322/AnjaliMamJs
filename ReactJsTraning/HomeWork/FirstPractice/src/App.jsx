@@ -14,6 +14,8 @@ import Fruit from "./CustomCreation/Fruit";
 import First from "./CustomCreation/UserInput/First";
 import ArrayinObj from "./CustomCreation/ArrayinObj";
 import MapCrud from "./CustomCreation/Crud/MapCrud";
+import MapCrud2 from "./CustomCreation/Crud/MapCrud2";
+import MapCrud3 from "./CustomCreation/Crud/MapCrud3";
 
 export default function App() {
   return (
@@ -32,7 +34,9 @@ export default function App() {
       {/* <Fruit /> */}
       {/* <First /> */}
       {/* <ArrayinObj /> */}
-      <MapCrud />
+      {/* <MapCrud /> */}
+      {/* <MapCrud2 /> */}
+      <MapCrud3 />
     </div>
   );
 }
