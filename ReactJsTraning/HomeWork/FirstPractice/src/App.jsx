@@ -16,6 +16,7 @@ import ArrayinObj from "./CustomCreation/ArrayinObj";
 import MapCrud from "./CustomCreation/Crud/MapCrud";
 import MapCrud2 from "./CustomCreation/Crud/MapCrud2";
 import MapCrud3 from "./CustomCreation/Crud/MapCrud3";
+import ApiCard from "./CustomCreation/ApiWithUseEffect/ApiCard";
 
 export default function App() {
   return (
@@ -36,7 +37,8 @@ export default function App() {
       {/* <ArrayinObj /> */}
       {/* <MapCrud /> */}
       {/* <MapCrud2 /> */}
-      <MapCrud3 />
+      {/* <MapCrud3 /> */}
+      <ApiCard />
     </div>
   );
 }

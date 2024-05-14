@@ -21,8 +21,6 @@ no dependemcies useEffect
 
 1. useEffect(callback) : it will invoke every event perform
 
-or
+2. useEffect(callback,[]) : no dependencies - call once in a program
 
-useEffect(callback,[]) : no dependencies - call every time
-
-2. useEffect(callback,[count]) : it depend on count
+3. useEffect(callback,[count]) : it depend on count
