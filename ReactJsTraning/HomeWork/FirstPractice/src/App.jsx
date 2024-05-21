@@ -18,6 +18,9 @@ import MapCrud2 from "./CustomCreation/Crud/MapCrud2";
 import MapCrud3 from "./CustomCreation/Crud/MapCrud3";
 import ApiCard from "./CustomCreation/ApiWithUseEffect/ApiCard";
 import Task from "./CustomCreation/TaskManager/Task";
+import ApiCard2 from "./CustomCreation/ApiWithUseEffect/ApiCard2";
+import ApiCard3 from "./CustomCreation/ApiWithUseEffect/ApiCard3";
+import ApiCard4 from "./CustomCreation/ApiWithUseEffect/ApiCard4";
 
 export default function App() {
   return (
@@ -39,8 +42,11 @@ export default function App() {
       {/* <MapCrud /> */}
       {/* <MapCrud2 /> */}
       {/* <MapCrud3 /> */}
+      {/* <Task /> */}
       {/* <ApiCard /> */}
-      <Task />
+      {/* <ApiCard2 /> */}
+      {/* <ApiCard3 /> */}
+      <ApiCard4 />
     </div>
   );
 }
