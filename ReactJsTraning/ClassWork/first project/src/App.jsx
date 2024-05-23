@@ -18,9 +18,9 @@ export default function App() {
       {/* <AllStateExample /> */}
       {/* <AllClassComponent /> */}
       {/* <AllPropsExample /> */}
-      {/* <AllLocalStorageExample /> */}
+      <AllLocalStorageExample />
       {/* <MapCrup /> */}
-      <AllHookExample />
+      {/* <AllHookExample /> */}
     </div>
   );
 }
