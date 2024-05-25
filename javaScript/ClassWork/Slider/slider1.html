@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .slider {
+            position: relative;
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .slides {
+            width: 66%;
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .slides img {
+            width: 100%;
+        }
+
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navigation button {
+            padding: 10px;
+            font-size: 25px;
+            margin: 0 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slides">
+            <img src="./img/img-1.jpg" class="slide" alt="">
+            <img src="./img/img-2.jpg" class="slide" alt="">
+            <img src="./img/img-3.jpg" class="slide" alt="">
+        </div>
+    </div>
+    <div class="navigation">
+        <button class="prev">
+            < </button>
+                <button class="next"> > </button>
+    </div>
+</body>
+
+</html>
