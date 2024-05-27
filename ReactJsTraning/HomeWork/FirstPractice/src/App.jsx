@@ -21,6 +21,7 @@ import Task from "./CustomCreation/TaskManager/Task";
 import ApiCard2 from "./CustomCreation/ApiWithUseEffect/ApiCard2";
 import ApiCard3 from "./CustomCreation/ApiWithUseEffect/ApiCard3";
 import ApiCard4 from "./CustomCreation/ApiWithUseEffect/ApiCard4";
+import TextEditor from "./TextEditor/TextEditor";
 
 export default function App() {
   return (
@@ -47,6 +48,7 @@ export default function App() {
       {/* <ApiCard2 /> */}
       {/* <ApiCard3 /> */}
       {/* <ApiCard4 /> */}
+      <TextEditor/>
     </div>
   );
 }
