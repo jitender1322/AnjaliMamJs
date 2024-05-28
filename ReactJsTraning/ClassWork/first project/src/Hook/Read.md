@@ -24,3 +24,10 @@ no dependemcies useEffect
 2. useEffect(callback,[]) : no dependencies - call once in a program
 
 3. useEffect(callback,[count]) : it depend on count
+
+======================================
+
+useRef : useRef is a one of most popular hook in react js
+         useRef which is refere to specific component.
+         e.g. on button click we can focus on input box
+
