@@ -7,6 +7,7 @@ export default function Task() {
   const [checked, setChecked] = useState('');
 
   const [data, setData] = useState([]);
+  const [editIndex, setEditIndex] = useState(null);
 
   useEffect(() => {
     let allData = JSON.parse(localStorage.getItem("Task")) || [];
@@ -15,9 +16,20 @@ export default function Task() {
 
   const handleSubmit = () => {
     let obj = { task, des, checked, status: 'pending' };
-    setData([...data, obj]);
+    if (editIndex == null) {
+      setData([...data, obj]);
+      localStorage.setItem("Task", JSON.stringify([...data, obj]));
+    } else {
+      let updateData = data[editIndex];
+      updateData.task = task;
+      updateData.des = des;
+      updateData.checked = checked;
 
-    localStorage.setItem("Task", JSON.stringify([...data, obj]));
+      localStorage.setItem("Task", JSON.stringify([...data]));
+    }
+    setTask('');
+    setDes('');
+    setChecked('');
   }
 
   const handleStatus = (index) => {
@@ -28,19 +40,34 @@ export default function Task() {
     localStorage.setItem("Task", JSON.stringify(updatedData));
   };
 
+  const handleDelete = (index) => {
+    let newData = data.filter((e, i) => i !== index);
+    setData(newData);
+    localStorage.setItem("Task", JSON.stringify(newData));
+  };
+
+  const handleEdit = (index) => {
+    let oldData = data[index];
+    setTask(oldData.task);
+    setDes(oldData.des);
+    setChecked(oldData.checked);
+
+    setEditIndex(index);
+  }
+
   return (
     <div>
       <div className="container">
         <h1>Task Manager</h1>
         <div className="form">
-          <input type="text" placeholder="Task Title" onChange={(e) => setTask(e.target.value)} />
-          <input type="text" placeholder="Task Description" onChange={(e) => setDes(e.target.value)} /><br />
+          <input type="text" placeholder="Task Title" value={task} onChange={(e) => setTask(e.target.value)} />
+          <input type="text" placeholder="Task Description" value={des} onChange={(e) => setDes(e.target.value)} /><br />
           <label>Priority :</label>
-          <label><input type="radio" name="priority" value='low' onChange={(e) => setChecked(e.target.value)} />Low</label>
-          <label> <input type="radio" name="priority" value='medium' onChange={(e) => setChecked(e.target.value)} />Medium</label>
-          <label> <input type="radio" name="priority" value='high' onChange={(e) => setChecked(e.target.value)} />High</label><br />
+          <label><input type="radio" name="priority" checked={checked === 'low'} value='low' onChange={(e) => setChecked(e.target.value)} />Low</label>
+          <label> <input type="radio" name="priority" checked={checked === 'medium'} value='medium' onChange={(e) => setChecked(e.target.value)} />Medium</label>
+          <label> <input type="radio" name="priority" checked={checked === 'high'} value='high' onChange={(e) => setChecked(e.target.value)} />High</label><br />
 
-          <button onClick={handleSubmit}>Submit</button>
+          <button onClick={handleSubmit}>{editIndex == null ? "Submit" : "Update"}</button>
         </div>
 
         <div className="task-table">
@@ -64,8 +91,8 @@ export default function Task() {
                     <td>{e.task}</td>
                     <td>{e.des}</td>
                     <td>{e.checked}</td>
-                    <td><button>Edit</button></td>
-                    <td><button>Delete</button></td>
+                    <td><button onClick={() => handleEdit(i)}>Edit</button></td>
+                    <td><button onClick={() => handleDelete(i)}>Delete</button></td>
                     <td><button onClick={() => handleStatus(i)} disabled={e.status == "Completed"}  >Mark as Completed</button></td>
                     <td>{e.status}</td>
                   </tr>

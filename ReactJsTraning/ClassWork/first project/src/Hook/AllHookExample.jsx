@@ -7,6 +7,8 @@ import HookExample5 from "./HookExample5";
 import UseRefExp1 from "./UseRefExample/UseRefExp1";
 import UseRefExp2 from "./UseRefExample/UseRefExp2";
 import UseRefExp3 from "./UseRefExample/UseRefExp3";
+import Problam1 from "./UseContextExample/Problam1";
+import UseContextExp1 from "./UseContextExample/UseContextExp1";
 
 export default function AllHookExample() {
   return (
@@ -20,7 +22,10 @@ export default function AllHookExample() {
 
       {/* <UseRefExp1/> */}
       {/* <UseRefExp2/> */}
-      <UseRefExp3/>
+      {/* <UseRefExp3/> */}
+
+      {/* <Problam1 /> */}
+      <UseContextExp1 />
     </div>
   );
 }

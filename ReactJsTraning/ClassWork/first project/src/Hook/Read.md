@@ -31,3 +31,15 @@ useRef : useRef is a one of most popular hook in react js
          useRef which is refere to specific component.
          e.g. on button click we can focus on input box
 
+
+=========================================
+
+useContext : manage globaly state
+
+        it contains 2 propertise:
+
+        createContext(): using of createContext we can create context globaly
+
+        useContext(contextName) : we can use specific context any component
+
+        context.Provider : which allow specific component to specific context

@@ -43,12 +43,12 @@ export default function App() {
       {/* <MapCrud /> */}
       {/* <MapCrud2 /> */}
       {/* <MapCrud3 /> */}
-      <Task />
+      {/* <Task /> */}
       {/* <ApiCard /> */}
       {/* <ApiCard2 /> */}
       {/* <ApiCard3 /> */}
       {/* <ApiCard4 /> */}
-      {/* <TextEditor/> */}
+      {/* <TextEditor /> */}
     </div>
   );
 }

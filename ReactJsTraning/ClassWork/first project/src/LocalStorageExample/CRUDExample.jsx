@@ -25,7 +25,7 @@ export default function CRUDExample() {
       oldRecord.subject = subject;
       oldRecord.city = city;
 
-      localStorage.setItem("Students", JSON.stringify([...student, oldRecord]));
+      localStorage.setItem("Students", JSON.stringify([...student]));
       setIndex(null);
     }
 
