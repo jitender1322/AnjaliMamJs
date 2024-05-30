@@ -9,6 +9,9 @@ import UseRefExp2 from "./UseRefExample/UseRefExp2";
 import UseRefExp3 from "./UseRefExample/UseRefExp3";
 import Problam1 from "./UseContextExample/Problam1";
 import UseContextExp1 from "./UseContextExample/UseContextExp1";
+import UseContextExp2 from "./UseContextExample/UseContextExp2";
+import ParentTheme from "./UseContextExample/ParentTheme";
+import ChildTheme from "./UseContextExample/ChildTheme";
 
 export default function AllHookExample() {
   return (
@@ -25,7 +28,11 @@ export default function AllHookExample() {
       {/* <UseRefExp3/> */}
 
       {/* <Problam1 /> */}
-      <UseContextExp1 />
+      {/* <UseContextExp1 /> */}
+      {/* <UseContextExp2 /> */}
+      <ParentTheme>
+        <ChildTheme />
+      </ParentTheme>
     </div>
   );
 }

@@ -22,6 +22,7 @@ import ApiCard2 from "./CustomCreation/ApiWithUseEffect/ApiCard2";
 import ApiCard3 from "./CustomCreation/ApiWithUseEffect/ApiCard3";
 import ApiCard4 from "./CustomCreation/ApiWithUseEffect/ApiCard4";
 import TextEditor from "./TextEditor/TextEditor";
+import Pizza from "./Pizza & Pasta/Pizza";
 
 export default function App() {
   return (
@@ -49,6 +50,7 @@ export default function App() {
       {/* <ApiCard3 /> */}
       {/* <ApiCard4 /> */}
       {/* <TextEditor /> */}
+      <Pizza />
     </div>
   );
 }

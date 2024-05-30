@@ -36,10 +36,17 @@ useRef : useRef is a one of most popular hook in react js
 
 useContext : manage globaly state
 
-        it contains 2 propertise:
+        it contains 3 propertise:
 
         createContext(): using of createContext we can create context globaly
 
         useContext(contextName) : we can use specific context any component
 
         context.Provider : which allow specific component to specific context
+
+we have to export createContext and then we have to import context
+
+when we have to send two values we use double curly braces in context provider.
+
+=========================================
+
