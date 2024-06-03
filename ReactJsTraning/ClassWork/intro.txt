@@ -113,3 +113,15 @@ props : property of component
         props are immutable ( we can't change it value)
 
         <childComponent key="value">
+
+-------------------------------------
+
+Routing : in simple language we can say navigation between one component to another component but as we know that
+          react js create single page application.
+
+          it just replace component insted of navigate
+
+          to manage Routing in react js there is one library its called react-router-dom before use routing 
+          we have to add this dependency in project.
+
+          # npm i react-router-dom

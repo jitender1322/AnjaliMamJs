@@ -1,26 +1,19 @@
-import React from "react";
-import AllJsxExample from "./JsxComponent/AllJsxExample";
-import AllFunctionExample from "./FunctionComponent/AllFunctionExample";
-import AllStyleExample from "./StyleComponent/AllStyleExample";
-import AllStateExample from "./StateComponents/AllStateExample";
-import AllClassComponent from "./ClassComponents/AllClassComponent";
-import AllPropsExample from "./Props/AllPropsExample";
-import AllLocalStorageExample from "./LocalStorageExample/AllLocalStorageExample";
-import MapCrup from "./MapCrudExample/MapCrud";
-import AllHookExample from "./Hook/AllHookExample";
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import HomeComponent from './Rounting With Router/HomeComponent'
+import ContactComponent from './Rounting With Router/ContactComponent'
+import AboutComponent from './Rounting With Router/AboutComponent'
 
 export default function App() {
   return (
     <div>
-      {/* <AllJsxExample /> */}
-      {/* <AllFunctionExample /> */}
-      {/* <AllStyleExample /> */}
-      {/* <AllStateExample /> */}
-      {/* <AllClassComponent /> */}
-      {/* <AllPropsExample /> */}
-      {/* <AllLocalStorageExample /> */}
-      {/* <MapCrup /> */}
-      <AllHookExample />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<HomeComponent />} ></Route>
+          <Route path='/contact' element={<ContactComponent />} ></Route>
+          <Route path='/about' element={<AboutComponent />} ></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
