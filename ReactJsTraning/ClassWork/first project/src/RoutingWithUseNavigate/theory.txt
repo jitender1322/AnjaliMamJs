@@ -1,0 +1,9 @@
+useNavigate() : useNavigate() is one of the most popular hook which is used to create dynamic navigation
+                in single page application.
+
+                which is provided by react-router-dom
+
+                in simple programatically we can control navigation between component.
+
+navigate(-1) : backward one step back
+navigate(1)  : forward one step next
