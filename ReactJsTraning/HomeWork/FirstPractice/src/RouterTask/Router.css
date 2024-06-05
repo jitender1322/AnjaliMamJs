@@ -18,7 +18,14 @@ body {
 .container h1 {
     text-align: center;
     padding: 10px 0;
+    color: #bdd40d;
     font-size: 35px;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .form {

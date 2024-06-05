@@ -18,6 +18,10 @@ export default function Home() {
 
     return (
         <div className='container'>
+            <div className="head">
+                <h1>Data.io</h1>
+                <Link to={"/form"} ><button>Add task</button></Link>
+            </div>
             <div className="task-table">
                 <table>
                     <thead>
@@ -29,7 +33,6 @@ export default function Home() {
                             <th>Gender</th>
                             <th>City</th>
                             <th colSpan={2}>Action</th>
-                            <th><Link to={"/form"} ><button>Add task</button></Link></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,7 +42,7 @@ export default function Home() {
                                     <td>{i + 1}</td>
                                     <td>{e.name}</td>
                                     <td>{e.mail}</td>
-                                    <td>{ }</td>
+                                    <td>{e.sub.map((e, i) => { return ` ${e} ` })}</td>
                                     <td>{e.checked}</td>
                                     <td>{e.city}</td>
                                     <td><button onClick={() => handleEdit(i)}>Edit</button></td>

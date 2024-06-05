@@ -5,18 +5,17 @@ import { Link } from 'react-router-dom'
 export default function Form() {
     const [name, setName] = useState("");
     const [mail, setMail] = useState("");
-    const [check1, setCheck1] = useState("");
-    const [check2, setCheck2] = useState("");
-    const [check3, setCheck3] = useState("");
-    const [check4, setCheck4] = useState("");
+    const [sub, setSub] = useState([]);
     const [city, setCity] = useState("");
     const [checked, setChecked] = useState("");
 
     const handleSubmit = () => {
-        let obj = { name, mail, check1, check2, check3, check4, city, checked };
+        let obj = { name, mail, sub, city, checked };
         const record = JSON.parse(localStorage.getItem("Student")) || [];
         record.push(obj);
         localStorage.setItem("Student", JSON.stringify(record));
+
+        console.log(sub);
     }
 
     return (
@@ -27,10 +26,10 @@ export default function Form() {
                 <input type="email" placeholder="Enter Your Email" onChange={(e) => setMail(e.target.value)} />
 
                 <h4>Subjects</h4>
-                <label>ReactJs<input type="checkbox" value='ReactJs' onChange={(e) => setCheck1(e.target.value)} /></label>
-                <label>NodeJs<input type="checkbox" value='NodeJs' onChange={(e) => setCheck2(e.target.value)} /></label>
-                <label>Python<input type="checkbox" value='Python' onChange={(e) => setCheck3(e.target.value)} /></label>
-                <label>JavaScript<input type="checkbox" value='JavaScript' onChange={(e) => setCheck4(e.target.value)} /></label>
+                <label>ReactJs<input type="checkbox" value='ReactJs' onChange={(e) => setSub([...sub, e.target.value])} /></label>
+                <label>NodeJs<input type="checkbox" value='NodeJs' onChange={(e) => setSub([...sub, e.target.value])} /></label>
+                <label>Python<input type="checkbox" value='Python' onChange={(e) => setSub([...sub, e.target.value])} /></label>
+                <label>JavaScript<input type="checkbox" value='JavaScript' onChange={(e) => setSub([...sub, e.target.value])} /></label>
 
                 <h4>City</h4>
                 <select onChange={(e) => setCity(e.target.value)} >

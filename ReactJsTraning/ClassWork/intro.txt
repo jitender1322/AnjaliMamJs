@@ -125,3 +125,27 @@ Routing : in simple language we can say navigation between one component to anot
           we have to add this dependency in project.
 
           # npm i react-router-dom
+
+--------------------------------------
+
+useNavigate() : useNavigate() is one of the most popular hook which is used to create dynamic navigation
+                in single page application.
+
+                which is provided by react-router-dom
+
+                in simple programatically we can control navigation between component.
+
+navigate(-1) : backward one step back
+navigate(1)  : forward one step next
+
+---------------------------------------
+
+useLoation() : useLoation is one of the best hook provided by react-router-dom. Which is used to handle browser path
+               location. We can access browser path, search name (?name="aaa"), hash(#section), state.
+
+               using of useLoation object we can access below things
+
+               location.pathname
+               location.search
+               location.hash
+               location.state
