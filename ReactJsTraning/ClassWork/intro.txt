@@ -26,7 +26,6 @@ or
 
 npm install -g create-react-app
 
--------------------------------------
 
 for project creation (traditional method)
 
@@ -36,7 +35,7 @@ cd projectname
 
 npm start
 
--------------------------------------
+------------------------------------------ we use this
 
 latest react project creation
 
