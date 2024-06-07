@@ -21,7 +21,7 @@ export default function ProductDetails() {
                 {card ? (
                     card.map((item, index) => {
                         return (
-                            <div key={index} className="card">
+                            <div key={index} className="card">d
                                 <img src={item.image} className="card-image" />
                                 <div className="card-content">
                                     <h2 className="card-title">{item.title}</h2>
