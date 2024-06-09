@@ -9,7 +9,6 @@ export default function Router() {
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<ProductDisplay />} ></Route>
-                    <Route path='/product/' element={<ProductDetails />} ></Route>
                     <Route path='/product/:id' element={<ProductDetails />} ></Route>
                 </Routes>
             </BrowserRouter>

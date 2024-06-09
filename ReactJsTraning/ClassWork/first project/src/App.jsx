@@ -5,8 +5,8 @@ import AllStyleExample from './StyleComponent/AllStyleExample'
 export default function App() {
   return (
     <div>
-      {/* <Router /> */}
-      <AllStyleExample />
+      <Router />
+      {/* <AllStyleExample /> */}
     </div>
   )
 }
