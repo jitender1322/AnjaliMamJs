@@ -1,7 +1,8 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { auth } from '../../firebaseConfig';
+import { auth, db } from '../../firebaseConfig';
+import { doc, getDoc } from 'firebase/firestore';
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -12,6 +13,12 @@ export default function Login() {
         e.preventDefault();
         const userCredentials = await signInWithEmailAndPassword(auth, email, password);
         const user = userCredentials.user;
+        const userDoc = await getDoc(doc(db, "Student", user.uid));
+        if (userDoc) {
+            console.log(userDoc.data());
+            console.log(userDoc.data().name);
+        }
+        navigate('/dashboard', { replace: true });
     }
     return (
         <div>

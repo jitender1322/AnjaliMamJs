@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import RegistrationPage from './RegistrationPage'
 import Login from './Login'
+import Deshboard from './Deshboard'
 export default function Router() {
     return (
         <div>
@@ -9,6 +10,7 @@ export default function Router() {
                 <Routes>
                     <Route path='/' element={<RegistrationPage />} ></Route>
                     <Route path='/login' element={<Login />} ></Route>
+                    <Route path='/dashboard' element={<Deshboard />} ></Route>
                 </Routes>
             </BrowserRouter>
         </div>
