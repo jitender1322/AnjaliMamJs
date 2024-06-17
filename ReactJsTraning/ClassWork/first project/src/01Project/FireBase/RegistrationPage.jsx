@@ -29,6 +29,7 @@ export default function RegistrationPage() {
                 <button>Submit</button>
             </form>
             <button onClick={() => navigate('login')} >login?</button>
+            <button onClick={() => navigate('guest')} >Guest?</button>
         </div>
     )
 }
