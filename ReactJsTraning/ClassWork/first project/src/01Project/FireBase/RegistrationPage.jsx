@@ -28,8 +28,8 @@ export default function RegistrationPage() {
                 <input type="password" placeholder='Enter Password' onChange={(e) => setPassword(e.target.value)} />
                 <button>Submit</button>
             </form>
-            <button onClick={() => navigate('login')} >login?</button>
-            <button onClick={() => navigate('guest')} >Guest?</button>
+            <button onClick={() => navigate('login', { replace: true })} >login?</button>
+            <button onClick={() => navigate('guest', { replace: true })} >Guest?</button>
         </div>
     )
 }

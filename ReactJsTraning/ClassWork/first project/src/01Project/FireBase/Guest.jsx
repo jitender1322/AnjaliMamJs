@@ -1,8 +1,10 @@
 import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import { auth, db } from '../../firebaseConfig';
+import { useNavigate } from 'react-router-dom';
 
 export default function Guest() {
+    const navigate = useNavigate();
     const [alluser, setAlluser] = useState([]);
     useEffect(() => {
         fetchAlluser();
@@ -19,8 +21,6 @@ export default function Guest() {
         await deleteDoc(doc(db, 'Student', userid));
         const newArray = alluser.filter(user => user.uid !== userid);
         setAlluser(newArray);
-        let user = auth.currentUser;
-        user.delete();
     }
     return (
         <div>
@@ -43,7 +43,7 @@ export default function Guest() {
                                 <td> {alluser.profilePic ? <img src={alluser.profilePic} alt="" width='50' height='50' /> : <img src="https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg" width='50' height='50' alt="" />} </td>
                                 <td> {e.name} </td>
                                 <td> {e.email} </td>
-                                <td> <button>Edit</button></td>
+                                <td> <button onClick={() => navigate(`/edit/${e.uid}`)}>Edit</button></td>
                                 <td> <button onClick={() => deleteUser(e.uid)}>Delete</button></td>
                             </tr>
                         }) : loading}

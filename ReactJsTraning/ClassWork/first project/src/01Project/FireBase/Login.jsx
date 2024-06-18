@@ -27,7 +27,7 @@ export default function Login() {
                 <input type="password" placeholder='Enter Password' onChange={(e) => setPassword(e.target.value)} />
                 <button>Submit</button>
             </form>
-            <button onClick={() => navigate('/')} >Register?</button>
+            <button onClick={() => navigate('/', { replace: true })} >Register?</button>
         </div>
     )
 }
