@@ -57,6 +57,9 @@ export default function Deshboard() {
                 <input type="submit" value='upload' />
             </form>
             {load == true ? <p>Loading</p> : <img src={path} style={{ width: '10%' }} />}
+
+            <button onClick={() => navigate('/post')}>upload post</button>
+            <button onClick={() => navigate('/allpost')}>View post</button>
         </div>
     )
 }

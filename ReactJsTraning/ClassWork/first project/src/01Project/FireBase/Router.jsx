@@ -5,6 +5,8 @@ import Login from './Login'
 import Deshboard from './Deshboard'
 import Guest from './Guest'
 import EditUser from './EditUser'
+import Post from './Post'
+import AllPost from './AllPost'
 export default function Router() {
     return (
         <div>
@@ -15,6 +17,8 @@ export default function Router() {
                     <Route path='/dashboard' element={<Deshboard />} ></Route>
                     <Route path='/guest' element={<Guest />} ></Route>
                     <Route path='/edit/:uid' element={<EditUser />} ></Route>
+                    <Route path='/post' element={<Post />} ></Route>
+                    <Route path='/allpost' element={<AllPost />} ></Route>
                 </Routes>
             </BrowserRouter>
         </div>
