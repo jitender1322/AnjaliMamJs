@@ -17,6 +17,7 @@ export default function Guest() {
         });
         setAlluser(user);
     };
+
     const deleteUser = async (userid) => {
         await deleteDoc(doc(db, 'Student', userid));
         const newArray = alluser.filter(user => user.uid !== userid);

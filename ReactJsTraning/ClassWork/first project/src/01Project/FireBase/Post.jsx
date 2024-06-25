@@ -19,7 +19,8 @@ export default function Post() {
             'title': title,
             'description': des,
             'image': downloadUrl,
-            'name': user.uid
+            'name': user.uid,
+            'timestamp': Date.now()
         })
     }
     return (
