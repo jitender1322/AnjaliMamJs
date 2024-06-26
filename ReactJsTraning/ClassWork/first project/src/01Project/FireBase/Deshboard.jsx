@@ -60,6 +60,7 @@ export default function Deshboard() {
 
             <button onClick={() => navigate('/post')}>upload post</button>
             <button onClick={() => navigate('/allpost')}>View post</button>
+            <button onClick={() => navigate('/alluser')}>All User</button>
         </div>
     )
 }

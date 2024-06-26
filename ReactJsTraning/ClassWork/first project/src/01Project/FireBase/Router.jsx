@@ -7,6 +7,7 @@ import Guest from './Guest'
 import EditUser from './EditUser'
 import Post from './Post'
 import AllPost from './AllPost'
+import AllUser from './AllUser'
 export default function Router() {
     return (
         <div>
@@ -19,6 +20,7 @@ export default function Router() {
                     <Route path='/edit/:uid' element={<EditUser />} ></Route>
                     <Route path='/post' element={<Post />} ></Route>
                     <Route path='/allpost' element={<AllPost />} ></Route>
+                    <Route path='/alluser' element={<AllUser />} ></Route>
                 </Routes>
             </BrowserRouter>
         </div>
