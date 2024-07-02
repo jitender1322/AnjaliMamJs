@@ -8,6 +8,7 @@ import EditUser from './EditUser'
 import Post from './Post'
 import AllPost from './AllPost'
 import AllUser from './AllUser'
+import ChatScreen from './ChatScreen'
 export default function Router() {
     return (
         <div>
@@ -21,6 +22,7 @@ export default function Router() {
                     <Route path='/post' element={<Post />} ></Route>
                     <Route path='/allpost' element={<AllPost />} ></Route>
                     <Route path='/alluser' element={<AllUser />} ></Route>
+                    <Route path='/chatscreen/:uid' element={<ChatScreen />} ></Route>
                 </Routes>
             </BrowserRouter>
         </div>
