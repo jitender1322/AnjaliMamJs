@@ -8,8 +8,8 @@ export default function App() {
     <div>
       {/* <Router /> */}
       {/* <AllStyleExample /> */}
-      <Router />
-      {/* <ReduxRouter /> */}
+      {/* <Router /> */}
+      <ReduxRouter />
     </div>
   )
 }
