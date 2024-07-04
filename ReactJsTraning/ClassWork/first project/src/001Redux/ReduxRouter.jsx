@@ -3,6 +3,7 @@ import MainRedux from './MainRedux'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { store } from './App/store'
+import TodoComponent from './TodoComponent'
 
 export default function ReduxRouter() {
   return (
@@ -10,7 +11,7 @@ export default function ReduxRouter() {
       <Provider store={store} >
         <BrowserRouter>
           <Routes>
-            <Route path='/' Component={MainRedux} ></Route>
+            <Route path='/' Component={TodoComponent} ></Route>
           </Routes>
         </BrowserRouter>
       </Provider>
