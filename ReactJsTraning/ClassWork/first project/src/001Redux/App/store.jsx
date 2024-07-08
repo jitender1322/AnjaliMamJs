@@ -7,6 +7,7 @@ export const store = configureStore({
     reducer: {
         counterKey: Counter,
         scorekey: Score,
-        todokey: todo
+        todokey: todo,
+
     }
 });

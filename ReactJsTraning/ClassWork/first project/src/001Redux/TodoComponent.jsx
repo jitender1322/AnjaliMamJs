@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo, deleteTodo } from './Features/todo';
+import { addTodo, deleteTodo, updateTodo } from './Features/todo';
 
 export default function TodoComponent() {
     const [todo, setTodo] = useState();
+    const [editIndex, setEditIndex] = useState(null);
     let dispatch = useDispatch();
 
     const handleSave = () => {
@@ -19,6 +20,15 @@ export default function TodoComponent() {
     const deleteHandler = (index) => {
         dispatch(deleteTodo(index));
     }
+    const edithandler = (index) => {
+        setTodo(data[index])
+        setEditIndex(index)
+    }
+    const updateHandler = () => {
+        dispatch(updateTodo({ index: editIndex, data: todo }))
+        setEditIndex(null)
+        setTodo('');
+    }
     return (
         <div>
             <input type='text'
@@ -27,12 +37,13 @@ export default function TodoComponent() {
                 value={todo}
             />
 
-            <button onClick={handleSave}>Save Task</button>
+            {editIndex !== null ? <button onClick={updateHandler}>Update Task</button> : <button onClick={handleSave}>Save Task</button>}
 
             {data.map((value, index) => {
                 return <div key={index}>
                     <h1 >{value}</h1>
                     <button onClick={() => deleteHandler(index)}>Delete</button>
+                    <button onClick={() => edithandler(index)}>Edit</button>
                 </div>
             })}
         </div>
