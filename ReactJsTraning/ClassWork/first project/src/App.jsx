@@ -2,6 +2,7 @@ import React from 'react'
 import AllStyleExample from './StyleComponent/AllStyleExample'
 import Router from './01Project/FireBase/Router'
 import ReduxRouter from './001Redux/ReduxRouter'
+import AllHookExample from './Hook/AllHookExample'
 
 export default function App() {
   return (
@@ -9,7 +10,8 @@ export default function App() {
       {/* <Router /> */}
       {/* <AllStyleExample /> */}
       {/* <Router /> */}
-      <ReduxRouter />
+      {/* <ReduxRouter /> */}
+      <AllHookExample />
     </div>
   )
 }
