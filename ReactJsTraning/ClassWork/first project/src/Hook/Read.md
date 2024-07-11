@@ -50,3 +50,13 @@ when we have to send two values we use double curly braces in context provider.
 
 =========================================
 
+useReducer : is a hook which is use for state management. There is many things similar in useState and          useReducer. useState use for simple local state management.UseReducer use for complex state management.
+
+useReducer which is accept 2 parameter : 
+
+const [var,function]=useState(initialValue);
+                        vs
+const [var,dispatch]=useReducer(reducer,initialValule);
+                                        |       
+                                        v
+                                reducer(currentState,action){}

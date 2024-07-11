@@ -17,6 +17,8 @@ import UseRefWithClass2 from "./UseRefExample/UseRefWithClass2";
 import UseRefWithClass3 from "./UseRefExample/UseRefWithClass3";
 import ParentComponent from "./UseRefExample/ParentComponent";
 import UseMemo from "./UseMemo/UseMemo";
+import Example1 from "./UseCallback/Example1";
+import UseExample from "./UseReducer/UseExample";
 
 export default function AllHookExample() {
   return (
@@ -42,7 +44,9 @@ export default function AllHookExample() {
       {/* <ParentTheme>
         <ChildTheme />
       </ParentTheme> */}
-      <UseMemo />
+      {/* <UseMemo /> */}
+      {/* <Example1 /> */}
+      <UseExample />
     </div>
   );
 }
