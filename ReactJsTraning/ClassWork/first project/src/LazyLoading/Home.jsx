@@ -12,7 +12,7 @@ export default function Home() {
             <Suspense fallback={<h2>Header is loading</h2>} >
                 <Header />
             </Suspense>
-            <Suspense fallback={<h2>Banner LOading</h2>}>
+            <Suspense fallback={<h2>Banner Loading</h2>}>
                 <Banner />
                 <Section />
             </Suspense>
