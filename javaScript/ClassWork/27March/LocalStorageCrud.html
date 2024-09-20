@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD with Local Storage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        button {
+            padding: 5px 10px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>CRUD App with Local Storage</h2>
+
+    <form id="crud-form">
+        <input type="hidden" id="item-id">
+        <input type="text" id="item-name" placeholder="Enter item name" required>
+        <button type="submit">Add Item</button>
+    </form>
+
+    <table id="items-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dynamic rows go here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Initialize items from localStorage or empty array
+        let items = JSON.parse(localStorage.getItem('items')) || [];
+
+        // Reference form elements
+        const form = document.getElementById('crud-form');
+        const itemNameInput = document.getElementById('item-name');
+        const itemIdInput = document.getElementById('item-id');
+        const itemsTableBody = document.querySelector('#items-table tbody');
+
+        // Handle form submission for adding or updating an item
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const itemName = itemNameInput.value.trim();
+            const itemId = itemIdInput.value;
+
+            if (itemId) {
+                // Update the existing item
+                updateItem(itemId, itemName);
+            } else {
+                // Add a new item
+                addItem(itemName);
+            }
+
+            itemNameInput.value = '';
+            itemIdInput.value = '';
+        });
+
+        // Function to add a new item
+        function addItem(name) {
+            const newItem = {
+                id: Date.now().toString(),
+                name: name
+            };
+            items.push(newItem);
+            saveToLocalStorage();
+            renderItems();
+        }
+
+        // Function to render all items in the table
+        function renderItems() {
+            itemsTableBody.innerHTML = '';
+
+            items.forEach((item) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+      <td>${item.id}</td>
+      <td>${item.name}</td>
+      <td>
+        <button onclick="editItem('${item.id}')">Edit</button>
+        <button onclick="deleteItem('${item.id}')">Delete</button>
+      </td>
+    `;
+                itemsTableBody.appendChild(row);
+            });
+        }
+
+        // Function to save items to localStorage
+        function saveToLocalStorage() {
+            localStorage.setItem('items', JSON.stringify(items));
+        }
+
+        // Function to edit an item
+        function editItem(id) {
+            const item = items.find(item => item.id === id);
+            if (item) {
+                itemNameInput.value = item.name; // Fill input with the current item name
+                itemIdInput.value = item.id; // Store the item ID in the hidden field
+            }
+        }
+
+        // Function to update an item
+        function updateItem(id, newName) {
+            const itemIndex = items.findIndex(item => item.id === id);
+            if (itemIndex > -1) {
+                items[itemIndex].name = newName;
+                saveToLocalStorage();
+                renderItems();
+            }
+        }
+
+        // Function to delete an item
+        function deleteItem(id) {
+            items = items.filter(item => item.id !== id);
+            saveToLocalStorage();
+            renderItems();
+        }
+
+        // Initial rendering of items when page loads
+        renderItems();
+
+    </script>
+</body>
+
+</html>

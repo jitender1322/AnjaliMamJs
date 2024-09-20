@@ -35,4 +35,4 @@ key points :
 latest version of redux is redux-toolkit
 
 ---> createSlice
----> consfigureSlice
+---> configureSlice
